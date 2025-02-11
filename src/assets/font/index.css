@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Siyuan";
+  src: url('./SourceHanSansCN-Regular-Min.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Siyuan-Bold";
+  src: url('./SourceHanSansCN-Bold-Min.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DDing";
+  src: url('./D-DIN.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+

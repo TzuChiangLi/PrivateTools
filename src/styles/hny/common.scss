@@ -1,0 +1,45 @@
+:root {
+  --el-color-primary: #164ce8;
+  --el-color-primary-light-3: #164ce8;
+  --el-color-primary-light-9: rgba(208, 219, 251, 0.6);
+  --el-color-success: #27A11C ;
+  --el-color-success-light-9: rgba(219, 248, 216, 0.6);
+  --el-color-warning: #FFAB1A;
+  --el-color-warning-light-9: rgba(255, 241, 217, 0.6);
+  --el-color-danger: #F74657  ;
+  --el-color-danger-light-9: rgba(253, 218, 221, 0.6);
+  --el-text-color-regular: #000000;
+  --el-dialog-title-font-size: 20px;
+  --el-border-color-hover: #164ce8;
+  --el-pagination-button-color: rgba(0, 0, 0, 0.9);
+  --el-font-weight-primary: 400;
+}
+
+html body {
+  font-family: 'Siyuan', 'Siyuan-Bold', 'DDing';
+}
+#avue-view {
+  margin: 16px 16px 0 16px;
+
+  // .basic-container {
+  //   height: 100%;
+
+  //   .el-card {
+  //     height: 100%;
+
+  //     &__body {
+
+  //       height: 100%;
+
+  //       .avue-crud--card {
+  //         display: flex;
+  //         flex-direction: column;
+
+  //         .avue-crud__body {
+  //           flex: 1;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

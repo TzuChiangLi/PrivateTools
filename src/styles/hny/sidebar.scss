@@ -1,0 +1,144 @@
+.avue-sidebar {
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  .avue-menu {
+    padding: 24px 8px;
+    .el-menu--collapse {
+      .el-tooltip__trigger {
+        padding: 0;
+        text-align: center;
+        i {
+          margin: 0 auto;
+        }
+        &:hover {
+          background: rgba(208, 219, 251, 0.4);
+        }
+      }
+    }
+    .el-sub-menu {
+      .el-menu {
+        .el-menu-item {
+          padding-left: 44px !important;
+        }
+      }
+    }
+    .el-menu-item,
+    .el-sub-menu__title {
+      border-radius: 4px;
+      height: 38px;
+      margin-bottom: 8px;
+      padding: 0 16px !important;
+      i {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 20px;
+        margin-right: 8px;
+      }
+      .el-sub-menu__icon-arrow {
+        font-size: 16px;
+      }
+      span {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+      }
+      .el-menu-- {
+        display: none;
+        width: 5px;
+        height: 2px;
+        background: #164ce8;
+      }
+      &:hover {
+        background: rgba(243, 243, 243, 0.6);
+        i {
+          color: rgba(0, 0, 0, 0.6);
+        }
+        span {
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      &.is-active {
+        &:before {
+          display: none;
+        }
+
+        background: rgba(208, 219, 251, 0.4);
+
+        i,
+        span {
+          color: #164ce8;
+        }
+        .el-menu-- {
+          display: block;
+        }
+      }
+    }
+    // 菜单为三级时相关csss
+    .el-menu {
+      .el-sub-menu.is-opened {
+        // 一级
+        & > .el-sub-menu__title {
+          i,
+          span {
+            color: #164ce8;
+          }
+        }
+        .el-menu {
+          .el-sub-menu {
+            // 二级
+            .el-sub-menu__title {
+              padding-left: 44px !important;
+              .iconfont {
+                display: none;
+              }
+            }
+            .el-sub-menu.is-opened {
+              // 一级
+              & > .el-sub-menu__title {
+                i,
+                span {
+                  color: #164ce8;
+                }
+              }
+            }
+            .el-menu {
+              // 三级
+              .el-menu-item {
+                padding-left: 60px !important;
+                // span {
+                //   color: rgba(0, 0, 0, 0.4);
+                // }
+
+                .iconfont {
+                  display: none;
+                }
+                &.is-active {
+                  .el-menu-- {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .avue-logo {
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+
+    .avue-logo_img {
+      width: 132px;
+      height: 46px;
+      margin-top: 14px;
+      cursor: pointer;
+    }
+    .avue-logo_img_collapse {
+      width: 32px;
+      height: 25px;
+      margin-top: 14px;
+      cursor: pointer;
+    }
+  }
+}

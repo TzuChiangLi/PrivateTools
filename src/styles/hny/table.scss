@@ -1,0 +1,420 @@
+// avue 表格样式
+.avue-crud {
+
+  &__search {
+    border-bottom: 1px solid #E7E7E7 !important;
+    .el-card__body {
+      padding-bottom: 0;
+
+      .avue-form {
+
+        .el-form {
+
+          .el-collapse-item__content {
+            position: relative;
+
+            .avue-form__group {
+
+              .avue-form__menu {
+                padding: 0;
+              }
+
+              .el-col {
+                margin-bottom: 12px;
+
+                .el-form-item {
+                  margin-bottom: 0;
+                }
+
+                &:last-child {
+                  padding-right: 24px !important;
+                  flex: 1;
+                  max-width: 100%;
+
+
+                  :not(.is-text) {
+                    .el-icon {
+                      display: none;
+                    }
+
+                    span {
+                      margin-left: 0;
+                    }
+
+                  }
+
+                  .is-text {
+                    position: relative;
+
+                    .el-icon {
+                      color: rgba(0, 0, 0, 0.4);
+                      position: absolute;
+                      right: -14px;
+                    }
+
+                    span {
+                      color: rgba(0, 0, 0, 0.4);
+                    }
+                  }
+
+                  .el-button {
+
+                    &:nth-child(2) {
+                      background: #E7E7E7;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding-top: 12px;
+
+    .avue-crud__header {
+      min-height: 0;
+      margin-bottom: 12px;
+
+      .avue-crud__left {
+
+        .el-button {
+
+          .el-icon {
+            display: none;
+          }
+
+          span {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .el-table {
+
+
+      &__header-wrapper {
+        .el-table__header {
+          height: 46px;
+
+          th.el-table__cell {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px;
+            font-weight: normal;
+            background: #F6F6F6;
+          }
+        }
+      }
+
+      &__body-wrapper {
+
+        .el-table__body {
+
+          .el-table-fixed-column--right {
+
+            .cell {
+              padding: 0;
+
+              .avue-crud__editBtn {
+                .el-icon {
+                  display: none;
+                }
+              }
+
+              .avue-crud__delBtn {
+                .el-icon {
+                  display: none;
+                }
+              }
+
+              .avue-crud__viewBtn {
+                .el-icon {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          .el-table__expand-icon {
+
+            .el-icon {
+              display: none;
+            }
+
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              background: url('@/assets/images/expand-icon.png') no-repeat center center;
+              background-size: 100%;
+              margin-bottom: 2px;
+              transform: rotate(-90deg)
+            }
+          }
+
+          .el-dropdown-link-tab {
+            cursor: pointer;
+            color: var(--el-color-primary);
+            display: flex;
+            align-items: center;
+            padding: 9px 4px;
+            margin-left: 7px;
+
+            .el-icon--right {
+              transform: rotate(90deg);
+              margin-left: 2px;
+              font-size: 12px;
+            }
+          }
+
+        }
+      }
+
+
+    }
+
+  }
+
+  &__pagination {
+
+    .el-card__body {
+
+      .el-pagination {
+        &__total {
+          color: rgba(0, 0, 0, 0.6);
+        }
+
+        &__sizes {
+
+          .el-select {
+
+            .el-input {
+              width: 96px;
+
+              &__wrapper {
+                padding: 1px 8px;
+              }
+            }
+          }
+        }
+
+        &__jump {
+          display: none;
+        }
+
+        .btn-prev {
+          background-color: transparent;
+
+          .el-icon {
+            font-size: 14px;
+            // color: rgba(0, 0, 0, 0.9);
+            path {
+              stroke: currentColor;
+              stroke-width:40;
+            }
+          }
+        }
+
+        .btn-next {
+          background-color: transparent;
+
+          .el-icon {
+            font-size: 14px;
+            path {
+              stroke: currentColor;
+              stroke-width:40;
+            }
+          }
+        }
+
+        .el-pager {
+
+          :not(.is-active) {
+            border: 1px solid #DCDCDC;
+            background: #fff;
+          }
+
+          .is-active {
+            font-weight: 500;
+          }
+
+          .number {
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.el-table__inner-wrapper::before {
+  height: 0;
+}
+
+// 表格更多操作样式
+
+
+
+// input select 样式
+.el-select__popper {
+  .el-select-dropdown__list {
+    margin: 6px 6px !important;
+
+
+    .el-select-dropdown__item {
+      padding: 0 20px 0 10px;
+
+      &:hover {
+        background-color:  rgba(208, 219, 251, 0.1);
+      }
+    }
+
+    .selected {
+      background-color:  rgba(208, 219, 251, 0.4);
+      font-weight: 500;
+    }
+  }
+}
+
+.el-tree-select__popper {
+
+  .el-select-dropdown__list {
+
+    .el-select-dropdown__item {
+      padding: 0;
+    }
+  }
+}
+.el-drawer {
+
+  &__header {
+    padding: 13px 16px !important;
+    border: 1px solid #E7E7E7 !important;
+    margin-bottom: 0;
+
+    .el-drawer__title {
+      font-size: 20px;
+      color: rgba(0,0,0,.85);
+    }
+
+    .avue-crud__dialog__menu {
+
+      .el-dialog__close {
+        display: none;
+      }
+    }
+  }
+
+
+  &__body {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .el-card__body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .avue-form {
+      padding: 0;
+
+      .el-form {
+
+        .avue-group {
+          border-bottom: 0.5px solid #E7E7E7;
+          padding: 12px 0;
+
+          &:first-child {
+            border: 0 none;
+            padding: 0;
+          }
+
+          &:nth-child(2) {
+            padding-top: 0;
+          }
+
+
+
+          .el-collapse-item__header {
+            border: 0 none;
+
+            &::before {
+              content: "";
+              display: inline-block;
+              width: 4px;
+              height: 16px;
+              background: #164CE8;
+            }
+
+            .el-collapse-item__arrow {
+              display: none;
+            }
+          }
+
+          .el-collapse-item__content {
+
+            .el-col {
+              padding: 0 10px;
+
+              .el-form-item{
+                display: flex;
+                align-items: start;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .avue-dialog__footer {
+      padding: 12px 16px;
+      border-color: #E7E7E7;
+
+      .el-button {
+        padding: 5px 16px;
+
+        &:last-child {
+          background: #E7E7E7;
+        }
+
+        .el-icon {
+          display: none;
+        }
+
+        span {
+          margin-left: 0;
+        }
+
+      }
+    }
+
+  }
+}
+
+.avue-crud-drawer {
+
+  .el-drawer__body {
+
+    .avue-dialog__footer {
+      display: flex;
+      flex-direction:row-reverse;
+
+      .el-button {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.avue-crud-more {
+
+  .el-dropdown-menu__item {
+    margin: 0 4px;
+    border-radius: 2px;
+  }
+}

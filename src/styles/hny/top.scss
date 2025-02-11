@@ -1,0 +1,37 @@
+.top-bar__left {
+  margin: 0;
+  left: 24px;
+  .avue-breadcrumb {
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 24px !important;
+      cursor: pointer;
+      color: #2c2c2c;
+    }
+  }
+}
+
+.top-bar__title {
+  padding-left: 60px;
+  .top-bar__title_text {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .top-search {
+    right: 240px;
+    width: 200px;
+  }
+}
+.top-bar__right {
+  .top-bar__item {
+    cursor: pointer;
+    margin: 0 8px;
+    i {
+      font-size: 16px !important;
+    }
+  }
+  .top-user {
+    margin: 0;
+  }
+}

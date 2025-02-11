@@ -1,0 +1,15 @@
+// element plus 全局配置
+@use "./common.scss";
+
+// 表格样式
+@use "./table.scss";
+
+// 侧边栏样式
+@use './sidebar.scss';
+
+
+// element plus 样式
+@use "./element-ui.scss";
+
+// 顶部导航栏样式
+@use "./top.scss";
