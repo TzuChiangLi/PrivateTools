@@ -15,6 +15,9 @@
           <el-button style="margin-left: 20px" type="success" @click="handleConvert">
             开始转换
           </el-button>
+          <el-button style="margin-left: 20px" type="danger" @click="removeAll">
+            清空队列
+          </el-button>
         </el-form-item>
       </div>
       <el-upload
@@ -57,7 +60,9 @@ const handleRemove = () => {
 }
 const handlePreview = () => {
 }
-
+const removeAll = () => {
+  fileList.value = []
+}
 const handleConvert = () => {
   console.log('handleConvert:' , fileList.value[0])
   let fileQueue = fileList.value;
@@ -75,7 +80,7 @@ const handleConvert = () => {
     console.log('file:',item)
     // Load the image
     const img = new Image();
-    img.src = URL.createObjectURL(fileList.value[0].raw);
+    img.src = URL.createObjectURL(item.raw);
     img.onload = async () => {
       canvas.width = img.width;
       canvas.height = img.height;
