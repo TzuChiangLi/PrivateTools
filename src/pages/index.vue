@@ -2,7 +2,7 @@
   <BasicContainer>
     <div class="base-container">
       <div class="upload-form">
-        <el-form :model="form">
+        <el-form :model="form" inline>
           <el-form-item label="图片质量" prop="quality">
             <el-input-number v-model="form.quality" :min="1" :max="100">
               <template #suffix>
@@ -10,15 +10,27 @@
               </template>
             </el-input-number>
           </el-form-item>
+          <el-form-item label="目标文件类型" prop="afterConvertFileType">
+            <el-radio-group v-model="form.afterConvertFileType">
+              <el-radio label="webp" value="webp">webp</el-radio>
+              <el-radio label="jpeg" value="jpg">jpg</el-radio>
+              <el-radio label="png" value="png">png</el-radio>
+            </el-radio-group>
+<!--            <el-select v-model="form.afterConvertFileType" placeholder="请选择">-->
+<!--              <el-option label="webp" value="webp"></el-option>-->
+<!--              <el-option label="jpeg" value="jpeg"></el-option>-->
+<!--              <el-option label="png" value="png"></el-option>-->
+<!--            </el-select>-->
+          </el-form-item>
         </el-form>
-        <el-form-item>
-          <el-button style="margin-left: 20px" type="success" @click="handleConvert">
-            开始转换
-          </el-button>
-          <el-button style="margin-left: 20px" type="danger" @click="removeAll">
-            清空队列
-          </el-button>
-        </el-form-item>
+      </div>
+      <div class="upload-btn">
+        <el-button style="margin-left: 20px" type="success" @click="handleConvert">
+          开始转换
+        </el-button>
+        <el-button style="margin-left: 20px" type="danger" @click="removeAll">
+          清空队列
+        </el-button>
       </div>
       <el-upload
           v-model:file-list="fileList"
@@ -54,7 +66,7 @@ import {ref} from "vue";
 import BasicContainer from "~/components/basic-container/main.vue";
 import {base64ToBlob , formatAfterConvertImageName} from "~/utils/util.js";
 
-const form = ref({quality: 90})
+const form = ref({  afterConvertFileType:'webp',  quality: 90})
 const fileList = ref([])
 const handleRemove = () => {
 }
@@ -63,7 +75,23 @@ const handlePreview = () => {
 const removeAll = () => {
   fileList.value = []
 }
+
+const convertType = (type) => {
+  switch (type) {
+    case 'webp':
+      return 'image/webp'
+    case 'jpeg':
+    case 'jpg':
+      return 'image/jpeg'
+    case 'png':
+      return 'image/png'
+    default:
+      return 'image/webp'
+  }
+}
+
 const handleConvert = () => {
+  console.log('form:',form.value)
   console.log('handleConvert:' , fileList.value[0])
   let fileQueue = fileList.value;
   if(fileQueue.length===0){
@@ -87,13 +115,13 @@ const handleConvert = () => {
       ctx.drawImage(img , 0 , 0);
 
       // Convert to WebP
-      const webpDataUrl = canvas.toDataURL('image/webp' , form.value['quality']);
+      const webpDataUrl = canvas.toDataURL(convertType(form.value.afterConvertFileType) , form.value['quality']);
       console.log(webpDataUrl)
       const blob = await base64ToBlob(webpDataUrl)
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = formatAfterConvertImageName({fileName:item.name,fileType:'.webp'},)
+      a.download = formatAfterConvertImageName({fileName:item.name,fileType:`.${form.value.afterConvertFileType}`},)
       // Step 3: Trigger download
       document.body.appendChild(a);
       a.click();
@@ -114,6 +142,10 @@ const handleConvert = () => {
     display: flex;
     align-items: center;
     justify-content: center
+  }
+
+  .upload-btn{
+    padding: 0 0 20px 0;
   }
 }
 </style>
